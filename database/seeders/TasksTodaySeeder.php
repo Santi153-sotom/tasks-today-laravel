@@ -9,6 +9,9 @@ class TasksTodaySeeder extends Seeder
 {
     public function run(): void
     {
+        DB::table('tasks')->delete();
+        DB::table('users')->delete();
+
         $today = now()->toDateString();
         $yesterday = now()->subDay()->toDateString();
         $tomorrow = now()->addDay()->toDateString();
